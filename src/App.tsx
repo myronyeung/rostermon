@@ -11,15 +11,12 @@ import './App.scss';
 const App: React.FunctionComponent = () => {
   return (
     <div className="App">
-      <NavHeader />
-      <BrowserRouter>
+      <BrowserRouter basename="">
+        <NavHeader />
         <Routes>
-          {/* TODO: Determine base URL programmatically. */}
           <Route path="/" element={<Home />} />
-          <Route path="/rostermon/" element={<Home />} />
-          <Route path="/browse" element={<MonsterBrowse />} />
+          <Route path="/rostermon" element={<Home />} />
           <Route path="/rostermon/browse" element={<MonsterBrowse />} />
-          <Route path="/filter" element={<MonsterFilter />} />
           <Route path="/rostermon/filter" element={<MonsterFilter />} />
         </Routes>
       </BrowserRouter>
