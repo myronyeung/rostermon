@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from './components/nav';
+import NavHeader from './components/navHeader';
 import MonsterView from './features/monsterView';
 
 import './App.scss';
@@ -7,7 +7,7 @@ import './App.scss';
 const App: React.FunctionComponent = () => {
   return (
     <div className="App">
-      <Nav />
+      <NavHeader />
       <MonsterView />
     </div>
   );
