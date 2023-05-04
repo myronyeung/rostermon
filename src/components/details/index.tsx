@@ -10,6 +10,9 @@ const Details: React.FunctionComponent = () => {
   return (
     <div className="details">
       <h2>Pokemon Details</h2>
+
+<button className="btn btn-primary" type="submit">Bootstrap Button!</button>
+
       {!monsters.loading && monsters.allMonsters && monsters.selectedId ? (
         <>
           <h3>

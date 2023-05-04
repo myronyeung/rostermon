@@ -2,7 +2,7 @@ import React from 'react';
 import Nav from './components/nav';
 import MonsterView from './features/monsterView';
 
-import './App.sass';
+import './App.scss';
 
 const App: React.FunctionComponent = () => {
   return (

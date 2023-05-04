@@ -1,0 +1,21 @@
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+body {
+  margin: 20px;
+  font-family: -apple-system, 'Roboto', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+header {
+  margin-bottom: 30px;
+  h1 {
+    margin-bottom: 0;
+  }
+  p {
+    margin-top: 5px;
+  }
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
