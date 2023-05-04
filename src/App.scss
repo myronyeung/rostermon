@@ -38,6 +38,8 @@
 }
 
 .monster-large-image {
+  border-radius: 14px; // Counteract non-transparent card image corners ruining box-shadow.
+  box-shadow: 7px 7px 15px gray;
   width: 300px;
 }
 
