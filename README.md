@@ -4,7 +4,7 @@
 
 # Development Information
 
-This project uses with [Create React App](https://github.com/facebook/create-react-app), [Redux Toolkit](https://redux-toolkit.js.org/), Typescript, Bootstrap.
+Built with [Create React App](https://github.com/facebook/create-react-app), [Redux Toolkit](https://redux-toolkit.js.org/), Typescript, Bootstrap, and Sass.
 
 ## Available Scripts
 
