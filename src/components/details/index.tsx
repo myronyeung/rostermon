@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 
 import { useAppSelector } from '../../app/hooks';
 
@@ -8,30 +9,19 @@ const Details: React.FunctionComponent = () => {
   const monsters = useAppSelector(monsterState);
 
   return (
-    <div className="details">
-      <h2>Pokemon Details</h2>
-
-      <button className="btn btn-primary" type="submit">
-        Bootstrap Button!
-      </button>
-
+    <Container className="details">
       {!monsters.loading && monsters.allMonsters && monsters.selectedId ? (
-        <>
-          <h3>
-            Selected Monster: {monsters.allMonsters[monsters.selectedId].name}
-          </h3>
-          <img
-            className="monster-large-image"
-            src={monsters.allMonsters[monsters.selectedId].image}
-            alt={`Card image of ${
-              monsters.allMonsters[monsters.selectedId].name
-            }`}
-          />
-        </>
+        <img
+          className="monster-large-image"
+          src={monsters.allMonsters[monsters.selectedId].image}
+          alt={`Card depicting ${
+            monsters.allMonsters[monsters.selectedId].name
+          }`}
+        />
       ) : (
         ''
       )}
-    </div>
+    </Container>
   );
 };
 

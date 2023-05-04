@@ -16,6 +16,8 @@ import {
   fetchMonsters,
 } from '../../features/monsterSlice';
 
+import Logo from '../../../src/images/logo.svg';
+
 // Change types to a string to make it more convenient to display in MUI Data Grid.
 export type MonsterRow = { id: Id } & { types: string } & Omit<
     MonsterInfo,
@@ -63,7 +65,17 @@ const Roster: React.FunctionComponent = () => {
 
   return (
     <div className="roster">
-      {monsters.loading && <div>Loading...</div>}
+      {monsters.loading && (
+        <div>
+          <img
+            src={Logo}
+            width="30"
+            height="30"
+            className="spinner"
+            alt="Loading monsters..."
+          />
+        </div>
+      )}
       {!monsters.loading && monsters.error && (
         <div>Error: {monsters.error}</div>
       )}

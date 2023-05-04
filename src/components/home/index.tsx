@@ -7,7 +7,7 @@ const Home: React.FunctionComponent = () => {
   return (
     <Container>
       Welcome to Rostermon
-      <img src={CharmanderImage} width="300" alt="Charmander hero image" />
+      <img src={CharmanderImage} width="300" alt="Charmander" />
     </Container>
   );
 };

@@ -14,14 +14,14 @@ export type MonsterInfo = {
 
 export type Id = string;
 
-export interface monsterState {
+export interface MonsterState {
   loading: boolean;
   selectedId: number;
   allMonsters: Monster;
   error: string;
 }
 
-const initialState: monsterState = {
+const initialState: MonsterState = {
   loading: false,
   selectedId: 0,
   allMonsters: {},

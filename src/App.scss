@@ -2,28 +2,39 @@
   text-align: center;
 }
 
+.spinner {
+  animation: rotation 0.75s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
 .content {
   display: flex;
   flex-wrap: no-wrap;
   justify-content: center;
+  padding: 20px;
 }
 
-.roster,
-.details {
+.roster {
   border: 1px solid black;
   border-radius: 5px;
 }
 
 .roster {
-  min-width: 35%;
+  min-width: 50%;
   height: 500px;
 }
 
-.details {
-  margin-left: 20px;
-  min-width: 30%;
-  padding: 5px;
-  background-color: #f50a2a;
+.details.container {
+  margin: 0 0 0 20px;
+  width: 300px;
 }
 
 .monster-large-image {
