@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/rostermon/static/css/main.b9dba7fc.css",
-    "main.js": "/rostermon/static/js/main.4c1af875.js",
+    "main.css": "/rostermon/static/css/main.d1c1d4a4.css",
+    "main.js": "/rostermon/static/js/main.b04b4d44.js",
     "static/js/787.1203c745.chunk.js": "/rostermon/static/js/787.1203c745.chunk.js",
+    "static/media/logo.svg": "/rostermon/static/media/logo.2db7de44dd9ea6558c0113d7d9e3db9d.svg",
     "index.html": "/rostermon/index.html",
-    "main.b9dba7fc.css.map": "/rostermon/static/css/main.b9dba7fc.css.map",
-    "main.4c1af875.js.map": "/rostermon/static/js/main.4c1af875.js.map",
+    "main.d1c1d4a4.css.map": "/rostermon/static/css/main.d1c1d4a4.css.map",
+    "main.b04b4d44.js.map": "/rostermon/static/js/main.b04b4d44.js.map",
     "787.1203c745.chunk.js.map": "/rostermon/static/js/787.1203c745.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b9dba7fc.css",
-    "static/js/main.4c1af875.js"
+    "static/css/main.d1c1d4a4.css",
+    "static/js/main.b04b4d44.js"
   ]
 }
