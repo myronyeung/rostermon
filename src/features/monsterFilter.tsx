@@ -1,14 +1,19 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 
 import Roster from '../components/roster';
 import Details from '../components/details';
 
+import './monsterFilter.scss';
+
 const MonsterFilter: React.FunctionComponent = () => {
   return (
-    <div className="content">
-      <Roster />
-      <Details />
-    </div>
+    <Container id="monsterFilter">
+      <div className="layout">
+        <Roster />
+        <Details />
+      </div>
+    </Container>
   );
 };
 

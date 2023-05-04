@@ -1,0 +1,38 @@
+#monsterFilter {
+  .layout {
+    display: flex;
+    flex-wrap: no-wrap;
+    justify-content: center;
+    padding: 20px;
+
+    .roster {
+      border: 1px solid black;
+      border-radius: 5px;
+      min-width: 50%;
+      height: 500px;
+    }
+
+    .details.container {
+      margin: 0 0 0 20px;
+      width: 300px;
+    }
+
+    .monster-large-image {
+      border-radius: 14px; // Counteract non-transparent card image corners ruining box-shadow.
+      box-shadow: 7px 7px 15px gray;
+      width: 300px;
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  #monsterFilter {
+    .layout {
+      display: block;
+    }
+
+    .monster-large-image {
+      width: 80%;
+    }
+  }
+}
