@@ -3,7 +3,7 @@ import React from 'react';
 import Roster from '../components/roster';
 import Details from '../components/details';
 
-const MonsterView: React.FunctionComponent = () => {
+const MonsterFilter: React.FunctionComponent = () => {
   return (
     <div className="content">
       <Roster />
@@ -12,6 +12,6 @@ const MonsterView: React.FunctionComponent = () => {
   );
 };
 
-MonsterView.displayName = 'MonsterView';
+MonsterFilter.displayName = 'MonsterFilter';
 
-export default MonsterView;
+export default MonsterFilter;

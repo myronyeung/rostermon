@@ -1,6 +1,6 @@
 import React from 'react';
 import NavHeader from './components/navHeader';
-import MonsterView from './features/monsterView';
+import MonsterFilter from './features/monsterFilter';
 
 import './App.scss';
 
@@ -8,7 +8,7 @@ const App: React.FunctionComponent = () => {
   return (
     <div className="App">
       <NavHeader />
-      <MonsterView />
+      <MonsterFilter />
     </div>
   );
 };
