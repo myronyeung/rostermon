@@ -46,13 +46,6 @@ const MonsterBrowse: React.FunctionComponent = () => {
 
   return (
     <Container id="monsterBrowse">
-      <h2>
-        Number of monsters loaded:{' '}
-        {monsters &&
-          monsters.allMonsters &&
-          Object.keys(monsters.allMonsters).length}
-      </h2>
-      <h2>{scrollTop}</h2>
       <Container
         className="browse-list-container overflow-scroll"
         onScroll={handleScroll}
@@ -75,15 +68,27 @@ const MonsterBrowse: React.FunctionComponent = () => {
                 monsters.allMonsters[monster];
               return (
                 <li key={monster} className="monster-info">
-                  <img src={image} alt={name} className="thumbnail" />
-                  <span className="id">{monster}</span>
-                  <span className="name">{name}</span>
-                  <span className="hp">{hp}</span>
-                  <span className="supertype">{supertype}</span>
-                  <span className="types">{types ? types.join(' ') : ''}</span>
-                  <span className="subtypes">
-                    {subtypes ? subtypes.join(' ') : ''}
-                  </span>
+                  <div className="grid-column">
+                    <img src={image} alt={name} className="thumbnail" />
+                  </div>
+                  <div className="grid-column bio">
+                    <div className="id">{monster}</div>
+                    <div className="name">{name}</div>
+                    <div>
+                      <div className="supertype">{supertype}</div>
+                      {hp && (
+                        <div className="hp-label">
+                          HP <span className="hp">{hp}</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  <div className="grid-column tags">
+                    <div className="types">{types ? types.join(' ') : ''}</div>
+                    <div className="subtypes">
+                      {subtypes ? subtypes.join(' ') : ''}
+                    </div>
+                  </div>
                 </li>
               );
             })}
@@ -93,6 +98,13 @@ const MonsterBrowse: React.FunctionComponent = () => {
           <div>Error: {monsters.error}</div>
         )}
       </Container>
+      <h2>
+        Number of monsters loaded:{' '}
+        {monsters &&
+          monsters.allMonsters &&
+          Object.keys(monsters.allMonsters).length}
+      </h2>
+      <h2>{scrollTop}</h2>
     </Container>
   );
 };

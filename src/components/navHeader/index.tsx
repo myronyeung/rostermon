@@ -6,7 +6,7 @@ import Logo from '../../../src/images/logo.svg';
 
 const NavHeader: React.FunctionComponent = () => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" style={{ marginBottom: '30px' }}>
       <Container>
         <Navbar.Brand href={`${process.env.PUBLIC_URL}/`}>
           <img src={Logo} width="30" height="30" alt="Pokemon ball logo" />{' '}

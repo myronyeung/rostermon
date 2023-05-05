@@ -7,9 +7,9 @@ export type Monster = Record<Id, MonsterInfo>;
 
 export type MonsterInfo = {
   name: string;
-  hp: number;
   image: string;
   supertype: string;
+  hp?: number;
   types?: string[];
   subtypes?: string[];
 };
