@@ -18,16 +18,62 @@ export type Id = string;
 
 export interface MonsterState {
   loading: boolean;
-  selectedId: number;
+  selectedId: string;
+  activeTags: string[];
   allMonsters: Monster;
   error: string;
+  allSupertypes: string[];
+  allTypes: string[];
+  allSubtypes: string[];
 }
 
 const initialState: MonsterState = {
   loading: false,
-  selectedId: 0,
+  selectedId: '',
+  activeTags: [],
   allMonsters: {},
   error: '',
+  allSupertypes: ['Energy', 'Pokémon', 'Trainer'],
+  allTypes: [
+    'Colorless',
+    'Darkness',
+    'Dragon',
+    'Fairy',
+    'Fighting',
+    'Fire',
+    'Grass',
+    'Lightning',
+    'Metal',
+    'Psychic',
+    'Water',
+  ],
+  allSubtypes: [
+    'BREAK',
+    'Baby',
+    'Basic',
+    'EX',
+    'GX',
+    'Goldenrod Game Corner',
+    'Item',
+    'LEGEND',
+    'Level-Up',
+    'MEGA',
+    'Pokémon Tool',
+    'Pokémon Tool F',
+    'Rapid Strike',
+    'Restored',
+    "Rocket's Secret Machine",
+    'Single Strike',
+    'Special',
+    'Stadium',
+    'Stage 1',
+    'Stage 2',
+    'Supporter',
+    'TAG TEAM',
+    'Technical Machine',
+    'V',
+    'VMAX',
+  ],
 };
 
 export const fetchMonsters = createAsyncThunk(
@@ -57,8 +103,25 @@ export const monsterSlice = createSlice({
   reducers: {
     // createSlice automatically generates Action Creators
     // Use the PayloadAction type to declare the contents of `action.payload`
-    select: (state, action: PayloadAction<number>) => {
+    select: (state, action: PayloadAction<string>) => {
       state.selectedId = action.payload;
+    },
+    selectTag: (
+      state,
+      action: PayloadAction<{ tag: string; isSelected: boolean }>
+    ) => {
+      const { tag, isSelected } = action.payload;
+
+      let arr = state.activeTags;
+
+      if (isSelected) {
+        arr.push(tag);
+      } else {
+        arr = arr.filter((item) => {
+          return item !== tag;
+        });
+      }
+      state.activeTags = arr;
     },
   },
   // Codevolution on YouTube: https://tinyurl.com/ej9ztw9e

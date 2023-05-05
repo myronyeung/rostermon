@@ -9,7 +9,7 @@ const MonsterDetails: React.FunctionComponent = () => {
   const monsters = useAppSelector(monsterState);
 
   return (
-    <Container className="details">
+    <Container id="monsterDetails">
       {!monsters.loading && monsters.allMonsters && monsters.selectedId ? (
         <img
           className="monster-large-image"

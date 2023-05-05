@@ -66,6 +66,7 @@ const MonsterBrowse: React.FunctionComponent = () => {
             {Object.keys(monsters.allMonsters).map((monster) => {
               const { image, name, hp, supertype, types, subtypes } =
                 monsters.allMonsters[monster];
+
               return (
                 <li key={monster} className="monster-info">
                   <div className="grid-column">
@@ -86,14 +87,12 @@ const MonsterBrowse: React.FunctionComponent = () => {
                   <div className="grid-column tags">
                     {types && types.length > 0
                       ? types.map((type: string) => {
-                          return <span className="types tag">{type}</span>;
+                          return <span className="tag type">{type}</span>;
                         })
                       : ''}
                     {subtypes && subtypes.length > 0
                       ? subtypes.map((subtype: string) => {
-                          return (
-                            <span className="subtypes tag">{subtype}</span>
-                          );
+                          return <span className="tag subtype">{subtype}</span>;
                         })
                       : ''}
                   </div>

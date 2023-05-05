@@ -1,68 +1,53 @@
-import React, { useEffect } from 'react';
-import {
-  DataGrid,
-  GridRowsProp,
-  GridColDef,
-  GridEventListener,
-} from '@mui/x-data-grid';
+import React, { useEffect, useState } from 'react';
+import { Container } from 'react-bootstrap';
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 
-import {
-  MonsterInfo,
-  Id,
-  monsterState,
-  monsterActions,
-  fetchMonsters,
-} from './monsterSlice';
+import { monsterState, monsterActions, fetchMonsters } from './monsterSlice';
 
 import Logo from '../../../src/images/logo.svg';
 
-// Change types to a string to make it more convenient to display in MUI Data Grid.
-export type MonsterRow = { id: Id } & MonsterInfo;
+export type ActiveTags = string[];
+
+export type TagsToTest = string[];
+
+const shouldDisplayMonster = (
+  activeTags: ActiveTags,
+  supertype: string,
+  type?: string[],
+  subtype?: string[]
+): boolean => {
+  // Show all monsters if no filters selected.
+  if (activeTags.length === 0) return true;
+
+  let shouldDisplay = true;
+  const tags: TagsToTest = [supertype];
+
+  if (typeof type !== 'undefined') tags.push(...type);
+  if (typeof subtype !== 'undefined') tags.push(...subtype);
+
+  // Compare both arrays.
+  activeTags.forEach((activeTag) => {
+    if (!tags.includes(activeTag)) shouldDisplay = false;
+  });
+
+  return shouldDisplay;
+};
 
 const MonsterRoster: React.FunctionComponent = () => {
   const monsters = useAppSelector(monsterState);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchMonsters({ page: 1, pageSize: 100 }));
+    dispatch(fetchMonsters({ page: 1, pageSize: 250 }));
   }, []);
 
-  const handleEvent: GridEventListener<'rowClick'> = (
-    params, // GridRowParams
-    event, // MuiEvent<React.MouseEvent<HTMLElement>>
-    details // GridCallbackDetails
-  ) => {
-    dispatch(monsterActions.select(params.row.id));
+  const handleEvent = (event: React.UIEvent<HTMLElement>) => {
+    dispatch(monsterActions.select(event.currentTarget.id));
   };
-
-  const fillDataGrid = () => {
-    const arr: MonsterRow[] = [];
-
-    Object.entries(monsters.allMonsters).forEach(([key, value]) => {
-      arr.push({
-        ...value,
-        id: key,
-      });
-    });
-
-    return arr;
-  };
-
-  const rows: GridRowsProp = fillDataGrid();
-
-  const columns: GridColDef[] = [
-    { field: 'id', headerName: 'Id', width: 100 },
-    { field: 'name', headerName: 'Name', width: 200 },
-    { field: 'hp', headerName: 'HP', width: 30 },
-    { field: 'supertype', headerName: 'Supertype', width: 150 },
-    { field: 'types', headerName: 'Types', width: 200 },
-    { field: 'subtypes', headerName: 'Subtypes', width: 200 },
-  ];
 
   return (
-    <div className="roster">
+    <Container id="monsterRoster">
       {monsters.loading && (
         <div>
           <img
@@ -77,10 +62,95 @@ const MonsterRoster: React.FunctionComponent = () => {
       {!monsters.loading && monsters.error && (
         <div>Error: {monsters.error}</div>
       )}
-      {!monsters.loading && monsters.allMonsters ? (
-        <DataGrid rows={rows} columns={columns} onRowClick={handleEvent} />
-      ) : null}
-    </div>
+
+      <Container className="browse-list-container overflow-scroll">
+        {monsters.loading && (
+          <div>
+            <img
+              src={Logo}
+              width="30"
+              height="30"
+              className="spinner"
+              alt="Loading monsters..."
+            />
+          </div>
+        )}
+        {monsters.allMonsters && (
+          <ul className="monster-list">
+            {Object.keys(monsters.allMonsters).map((monster) => {
+              const { image, name, hp, supertype, types, subtypes } =
+                monsters.allMonsters[monster];
+              if (
+                shouldDisplayMonster(
+                  monsters.activeTags,
+                  supertype,
+                  types,
+                  subtypes
+                )
+              ) {
+                return (
+                  <li
+                    id={monster}
+                    key={monster}
+                    className="monster-info"
+                    onClick={handleEvent}
+                  >
+                    <div className="grid-column">
+                      <img src={image} alt={name} className="thumbnail" />
+                    </div>
+                    <div className="grid-column bio">
+                      <div className="id">{monster}</div>
+                      <div className="name">{name}</div>
+                      <div>
+                        <div className="supertype">{supertype}</div>
+                        {hp && (
+                          <div className="hp-label">
+                            HP <span className="hp">{hp}</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                    <div className="grid-column tags">
+                      {types && types.length > 0
+                        ? types.map((type: string) => {
+                            return (
+                              <span className="tag type" key={type}>
+                                {type}
+                              </span>
+                            );
+                          })
+                        : ''}
+                      {subtypes && subtypes.length > 0
+                        ? subtypes.map((subtype: string) => {
+                            return (
+                              <span className="tag subtype" key={subtype}>
+                                {subtype}
+                              </span>
+                            );
+                          })
+                        : ''}
+                    </div>
+                    <div>
+                      {shouldDisplayMonster(
+                        monsters.activeTags,
+                        supertype,
+                        types,
+                        subtypes
+                      )
+                        ? 'Active'
+                        : 'Inactive'}
+                    </div>
+                  </li>
+                );
+              }
+            })}
+          </ul>
+        )}
+        {!monsters.loading && monsters.error && (
+          <div>Error: {monsters.error}</div>
+        )}
+      </Container>
+    </Container>
   );
 };
 

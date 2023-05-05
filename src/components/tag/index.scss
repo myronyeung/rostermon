@@ -1,0 +1,35 @@
+.tag {
+  display: inline-block;
+  margin: 3px;
+  border-radius: 5px;
+  padding: 3px;
+  min-width: 40px;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tag.button {
+  opacity: 0.4;
+}
+
+.tag.button.active {
+  opacity: 1;
+}
+
+.tag.supertype {
+  background-color: black;
+  color: white;
+}
+
+.tag.type {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.tag.subtype {
+  background-color: #198722;
+  color: white;
+}
