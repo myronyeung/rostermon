@@ -1,10 +1,14 @@
+$hero-image-height: 500px;
+$hero-image-width: 439px;
+
 #home {
   display: flex;
   justify-content: center;
+  align-items: center;
 
   .intro {
-    margin: 30px 20px 0 0;
-    width: 30%;
+    margin: 0 20px 0 0;
+    width: 50vh;
 
     h2 {
       text-align: center;
@@ -12,6 +16,46 @@
 
     .welcome-message {
       text-align: justify;
+    }
+  }
+  .hero-image {
+    width: calc($hero-image-width / 1.5);
+    height: calc($hero-image-height / 1.5);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #home {
+    display: block;
+    justify-content: center;
+
+    .intro {
+      width: 80vh;
+
+      h2 {
+        text-align: center;
+      }
+
+      .welcome-message {
+        text-align: justify;
+      }
+    }
+
+    .hero-image {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #home {
+    .intro {
+      width: 30vh;
+    }
+
+    .hero-image {
+      width: calc($hero-image-width / 3);
+      height: calc($hero-image-height / 3);
     }
   }
 }

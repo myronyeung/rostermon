@@ -28,12 +28,7 @@ const Home: React.FunctionComponent = () => {
           .
         </p>
       </div>
-      <img
-        src={CharmanderImage}
-        width="300"
-        alt="Charmander"
-        className="hero-image"
-      />
+      <img src={CharmanderImage} alt="Charmander" className="hero-image" />
     </Container>
   );
 };
