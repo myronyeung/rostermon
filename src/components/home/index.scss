@@ -1,2 +1,15 @@
-.hero-image {
+#home {
+  display: flex;
+
+  .intro {
+    padding-top: 3vh;
+    width: 30%;
+
+    h2 {
+      text-align: center;
+    }
+    .welcome-message {
+      text-align: justify;
+    }
+  }
 }
