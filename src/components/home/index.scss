@@ -2,7 +2,7 @@ $hero-image-height: 500px;
 $hero-image-width: 439px;
 
 #home {
-  color: red;
+  color: pink;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,8 +26,15 @@ $hero-image-width: 439px;
   }
 }
 
+@media screen and (max-width: 393px) {
+  #home {
+    color: green;
+  }
+}
+
 @media screen and (max-width: 768px) {
   #home {
+    color: red;
     .intro {
       width: 90vh;
     }
@@ -39,5 +46,11 @@ $hero-image-width: 439px;
     .hero-image {
       display: none;
     }
+  }
+}
+
+@media screen and (max-width: 852px) {
+  #home {
+    color: blue;
   }
 }
