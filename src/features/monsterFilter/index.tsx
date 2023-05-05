@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 
-import Roster from './MonsterRoster';
-import Details from './monsterDetails';
+import MonsterRoster from './MonsterRoster';
+import MonsterDetails from './MonsterDetails';
 
 import './index.scss';
 
@@ -10,8 +10,8 @@ const MonsterFilter: React.FunctionComponent = () => {
   return (
     <Container id="monsterFilter">
       <div className="layout">
-        <Roster />
-        <Details />
+        <MonsterRoster />
+        <MonsterDetails />
       </div>
     </Container>
   );
