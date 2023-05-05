@@ -94,8 +94,20 @@
 @media screen and (max-width: 768px) {
   #monsterBrowse {
     .browse-list-container {
-      width: 90vh;
-      color: red;
+      width: 700px;
+
+      .monster-list {
+        list-style-type: none;
+        padding-left: 0;
+        text-align: left;
+
+        .monster-info {
+          .name {
+            font-size: 1.5rem;
+            line-height: 2rem;
+          }
+        }
+      }
     }
   }
 }
