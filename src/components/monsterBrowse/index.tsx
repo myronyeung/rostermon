@@ -69,7 +69,14 @@ const MonsterBrowse: React.FunctionComponent = () => {
                   </div>
                   <div className="grid-column bio">
                     <div className="id">{monster}</div>
-                    <div className="name"><a href="#" onClick={() => setModal({ showModal: true, image })}>{name}</a></div>
+                    <div className="name">
+                      <a
+                        href="#"
+                        onClick={() => setModal({ showModal: true, image })}
+                      >
+                        {name}
+                      </a>
+                    </div>
                     <div>
                       <div className="supertype">{supertype}</div>
                       {hp && (
@@ -101,7 +108,7 @@ const MonsterBrowse: React.FunctionComponent = () => {
         )}
       </div>
       {monsters.loading && (
-        <div style={{ textAlign: 'center' }}>
+        <div className="spinner-container">
           <img
             src={Logo}
             width="30"
@@ -111,15 +118,6 @@ const MonsterBrowse: React.FunctionComponent = () => {
           />
         </div>
       )}
-      {/* 
-      DEBUG
-      <h2>
-        Number of monsters loaded:{' '}
-        {monsters &&
-          monsters.allMonsters &&
-          Object.keys(monsters.allMonsters).length}
-      </h2>
-      <h2>{scrollTop}</h2> */}
       <Modal
         show={modal.showModal}
         onHide={() => {

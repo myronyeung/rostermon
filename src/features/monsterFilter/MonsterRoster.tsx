@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import {Button} from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { monsterState, monsterActions, fetchMonsters } from './monsterSlice';
@@ -133,7 +133,14 @@ const MonsterRoster: React.FunctionComponent = () => {
           <div>Error: {monsters.error}</div>
         )}
       </div>
-      <Button variant="primary" onClick={() => dispatch(monsterActions.incrementPage())}>Load more monsters</Button>
+      <div className="monster-roster-footer">
+        <Button
+          variant="primary"
+          onClick={() => dispatch(monsterActions.incrementPage())}
+        >
+          Load more monsters
+        </Button>
+      </div>
     </div>
   );
 };
