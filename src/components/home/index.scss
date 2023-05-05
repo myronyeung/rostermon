@@ -1,7 +1,8 @@
 $hero-image-height: 500px;
 $hero-image-width: 439px;
 
-#home {color: red;
+#home {
+  color: red;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,25 +20,23 @@ $hero-image-width: 439px;
     }
   }
   .hero-image {
+    display: block;
     width: calc($hero-image-width / 1.5);
     height: calc($hero-image-height / 1.5);
   }
 }
 
 @media screen and (max-width: 480px) {
-  #home {color: green;
+  #home {
+    color: green;
     display: block;
     justify-content: center;
 
     .intro {
       width: 80vh;
 
-      h2 {
-        text-align: center;
-      }
-
       .welcome-message {
-        text-align: justify;
+        text-align: center;
       }
     }
 
@@ -48,12 +47,18 @@ $hero-image-width: 439px;
 }
 
 @media screen and (max-width: 768px) {
-  #home {color: blue;
+  #home {
+    color: blue;
     .intro {
       width: 30vh;
     }
 
+    .welcome-message {
+      text-align: justify;
+    }
+
     .hero-image {
+      display: block;
       width: calc($hero-image-width / 3);
       height: calc($hero-image-height / 3);
     }
