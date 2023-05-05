@@ -2,8 +2,8 @@
   #monsterBrowse {
     color: red;
     .browse-list-container {
-      width: 80vw;
-      height: 80vh;
+      width: 90vw;
+      height: 870vh;
 
       .monster-list {
         list-style-type: none;
@@ -51,23 +51,23 @@
           }
 
           .name {
-            font-size: 2rem;
-            line-height: 3rem;
+            font-size: 1.5rem;
+            line-height: 1.5rem;
           }
 
           .hp-label {
+            font-size: 0.5rem;
             font-weight: bold;
           }
 
           .hp {
-            font-size: 1.5rem;
+            font-size: 1rem;
             font-weight: normal;
             color: black;
           }
 
           .supertype {
-            margin-right: 30px;
-            font-size: 1.5rem;
+            font-size: 1rem;
           }
         }
       }
