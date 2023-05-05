@@ -1,46 +1,19 @@
 $hero-image-height: 500px;
 $hero-image-width: 439px;
 
-#home {
-  color: pink;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .intro {
-    margin: 0 20px 0 0;
-    width: 50vh;
-
-    h2 {
-      text-align: center;
-    }
-
-    .welcome-message {
-      text-align: justify;
-    }
-  }
-  .hero-image {
-    display: block;
-    width: calc($hero-image-width / 1.5);
-    height: calc($hero-image-height / 1.5);
-  }
-}
-
-@media screen and (max-width: 393px) {
+@media (max-width: 767px) {
   #home {
-    color: green;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  #home {
-    color: red;
+    color: gray;
     .intro {
-      width: 90vh;
-    }
+      width: 80vw;
 
-    .welcome-message {
-      text-align: center;
+      h2 {
+        text-align: center;
+      }
+
+      .welcome-message {
+        text-align: center;
+      }
     }
 
     .hero-image {
@@ -49,8 +22,85 @@ $hero-image-width: 439px;
   }
 }
 
-@media screen and (max-width: 852px) {
+@media (min-width: 768px) {
   #home {
-    color: blue;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .intro {
+      width: 40vw;
+
+      h2 {
+        text-align: center;
+      }
+
+      .welcome-message {
+        text-align: center;
+      }
+    }
+
+    .hero-image {
+      display: block;
+      width: calc($hero-image-width / 2);
+      height: calc($hero-image-height / 2);
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  #home {
+    color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .intro {
+      margin: 0 20px 0 0;
+      width: 50vw;
+
+      h2 {
+        text-align: center;
+      }
+
+      .welcome-message {
+        text-align: justify;
+      }
+    }
+
+    .hero-image {
+      display: block;
+      width: calc($hero-image-width / 1.5);
+      height: calc($hero-image-height / 1.5);
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  #home {
+    color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .intro {
+      margin: 0 20px 0 0;
+      width: 50vw;
+
+      h2 {
+        text-align: center;
+      }
+
+      .welcome-message {
+        text-align: justify;
+      }
+    }
+
+    .hero-image {
+      display: block;
+      width: $hero-image-width;
+      height: $hero-image-height;
+    }
   }
 }
