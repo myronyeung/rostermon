@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 import Roster from './MonsterRoster';
 import Details from './monsterDetails';
 
-import './monsterFilter.scss';
+import './index.scss';
 
 const MonsterFilter: React.FunctionComponent = () => {
   return (
