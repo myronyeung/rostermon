@@ -4,6 +4,7 @@ $hero-image-width: 439px;
 @media (max-width: 575px) {
   #home {
     .intro {
+      margin: 0 auto;
       width: 80vw;
 
       h2 {

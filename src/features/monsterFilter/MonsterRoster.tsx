@@ -38,7 +38,7 @@ const MonsterRoster: React.FunctionComponent = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchMonsters({ page: 1, pageSize: 250 }));
+    dispatch(fetchMonsters({ page: 1, pageSize: 100 }));
   }, []);
 
   const handleEvent = (event: React.UIEvent<HTMLElement>) => {
@@ -47,17 +47,6 @@ const MonsterRoster: React.FunctionComponent = () => {
 
   return (
     <div id="monsterRoster">
-      {monsters.loading && (
-        <div>
-          <img
-            src={Logo}
-            width="30"
-            height="30"
-            className="spinner"
-            alt="Loading monsters..."
-          />
-        </div>
-      )}
       {!monsters.loading && monsters.error && (
         <div>Error: {monsters.error}</div>
       )}
