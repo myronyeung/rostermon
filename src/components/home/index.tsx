@@ -1,5 +1,4 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
 
 import CharmanderImage from '../../images/charmander.png';
 
@@ -7,7 +6,7 @@ import './index.scss';
 
 const Home: React.FunctionComponent = () => {
   return (
-    <Container id="home">
+    <div id="home">
       <div className="intro">
         <h2>Welcome to Rostermon</h2>
         <p className="welcome-message">
@@ -29,7 +28,7 @@ const Home: React.FunctionComponent = () => {
         </p>
       </div>
       <img src={CharmanderImage} alt="Charmander" className="hero-image" />
-    </Container>
+    </div>
   );
 };
 

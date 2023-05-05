@@ -1,6 +1,9 @@
+@import '../../App.scss';
+
 @media (max-width: 575px) {
   #monsterBrowse {
     .browse-list-container {
+      margin: 0 auto;
       width: 95vw;
       height: 80vh;
 
@@ -13,16 +16,10 @@
           display: grid;
           grid-template-columns: auto auto 4fr;
           margin: 20px 10px;
-          border: 1px solid rgb(0, 0, 0, 0.5);
-          border-radius: 5px;
-          box-shadow: 7px 7px 10px rgb(0, 0, 0, 0.2);
+          @include shadow-border;
 
           .grid-column {
             margin: 0;
-          }
-
-          .grid-column.image {
-            align-self: center;
           }
 
           .grid-column.bio,
@@ -54,25 +51,23 @@
           }
 
           .name {
-            font-size: 1.5rem;
-            line-height: 2rem;
+            font-size: 2rem;
+            line-height: 3rem;
           }
 
           .hp-label {
-            font-size: 0.5rem;
             font-weight: bold;
           }
 
           .hp {
-            font-size: 1rem;
+            font-size: 1.5rem;
             font-weight: normal;
             color: black;
           }
 
           .supertype {
-            display: block;
             margin-right: 30px;
-            font-size: 1rem;
+            font-size: 1.5rem;
           }
         }
       }
@@ -83,6 +78,7 @@
 @media (min-width: 576px) {
   #monsterBrowse {
     .browse-list-container {
+      margin: 0 auto;
       width: 900px;
       height: 80vh;
 
@@ -95,9 +91,7 @@
           display: grid;
           grid-template-columns: auto auto 4fr;
           margin: 20px 10px;
-          border: 1px solid rgb(0, 0, 0, 0.5);
-          border-radius: 5px;
-          box-shadow: 7px 7px 10px rgb(0, 0, 0, 0.2);
+          @include shadow-border;
 
           .grid-column {
             margin: 0;

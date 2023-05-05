@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Modal } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 
@@ -46,8 +46,8 @@ const MonsterBrowse: React.FunctionComponent = () => {
   };
 
   return (
-    <Container id="monsterBrowse">
-      <Container
+    <div id="monsterBrowse">
+      <div
         className="browse-list-container overflow-scroll"
         onScroll={handleScroll}
       >
@@ -98,7 +98,7 @@ const MonsterBrowse: React.FunctionComponent = () => {
         {!monsters.loading && monsters.error && (
           <div>Error: {monsters.error}</div>
         )}
-      </Container>
+      </div>
       {monsters.loading && (
         <div style={{ textAlign: 'center' }}>
           <img
@@ -131,7 +131,7 @@ const MonsterBrowse: React.FunctionComponent = () => {
           <img src={modal.image} className="image" />
         </Modal.Body>
       </Modal>
-    </Container>
+    </div>
   );
 };
 

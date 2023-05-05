@@ -1,7 +1,6 @@
 import React from 'react';
 import { useRouteError } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
 
 import NavHeader from './components/navHeader';
 import SadPikachus from '../src/images/sad.jpg';
@@ -14,7 +13,7 @@ const ErrorPage: React.FunctionComponent = () => {
   return (
     <div id="error-page">
       <NavHeader />
-      <Container>
+      <div>
         <h1>Oops!</h1>
         <p>Sorry, an unexpected error has occurred.</p>
         <p>{error.statusText || error.message}</p>
@@ -24,7 +23,7 @@ const ErrorPage: React.FunctionComponent = () => {
           <Link to={`${process.env.PUBLIC_URL}/`}>home page</Link> first.
         </p>
         <img src={SadPikachus} width="300" alt="" />
-      </Container>
+      </div>
     </div>
   );
 };

@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { Container } from 'react-bootstrap';
+import React, { useEffect } from 'react';
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 
@@ -47,7 +46,7 @@ const MonsterRoster: React.FunctionComponent = () => {
   };
 
   return (
-    <Container id="monsterRoster">
+    <div id="monsterRoster">
       {monsters.loading && (
         <div>
           <img
@@ -63,7 +62,7 @@ const MonsterRoster: React.FunctionComponent = () => {
         <div>Error: {monsters.error}</div>
       )}
 
-      <Container className="browse-list-container overflow-scroll">
+      <div className="browse-list-container">
         {monsters.loading && (
           <div>
             <img
@@ -139,8 +138,8 @@ const MonsterRoster: React.FunctionComponent = () => {
         {!monsters.loading && monsters.error && (
           <div>Error: {monsters.error}</div>
         )}
-      </Container>
-    </Container>
+      </div>
+    </div>
   );
 };
 

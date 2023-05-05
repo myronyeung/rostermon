@@ -1,5 +1,4 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
 
 import { useAppSelector } from '../../app/hooks';
 
@@ -9,7 +8,7 @@ const MonsterDetails: React.FunctionComponent = () => {
   const monsters = useAppSelector(monsterState);
 
   return (
-    <Container id="monsterDetails">
+    <div id="monsterDetails">
       {!monsters.loading && monsters.allMonsters && monsters.selectedId ? (
         <img
           className="monster-large-image"
@@ -21,7 +20,7 @@ const MonsterDetails: React.FunctionComponent = () => {
       ) : (
         ''
       )}
-    </Container>
+    </div>
   );
 };
 

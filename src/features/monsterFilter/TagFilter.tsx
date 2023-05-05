@@ -11,7 +11,7 @@ const TagFilter: React.FunctionComponent = () => {
   return (
     <Accordion defaultActiveKey="0" id="tagFilter">
       <Accordion.Item eventKey="0">
-        <Accordion.Header>Filter</Accordion.Header>
+        <Accordion.Header>Filters</Accordion.Header>
         <Accordion.Body>
           {monsters.allTypes.map((type) => {
             return <Tag category="type" name={type} key={type} />;
