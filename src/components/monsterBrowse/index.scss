@@ -1,6 +1,7 @@
 @media (max-width: 575px) {
   #monsterBrowse {
     .browse-list-container {
+      color: red;
       width: 95vw;
       height: 80vh;
 
@@ -83,7 +84,7 @@
 @media (min-width: 576px) {
   #monsterBrowse {
     .browse-list-container {
-      color: red;
+      color: orange;
       width: 900px;
       height: 80vh;
 
