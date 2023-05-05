@@ -4,13 +4,21 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 
 import Logo from '../../../src/images/logo.svg';
 
+import './index.scss';
+
 const NavHeader: React.FunctionComponent = () => {
   return (
-    <Navbar bg="light" expand="lg" style={{ marginBottom: '30px' }}>
+    <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand href={`${process.env.PUBLIC_URL}/`}>
-          <img src={Logo} width="30" height="30" alt="Pokemon ball logo" />{' '}
-          Rostermon
+          <img
+            src={Logo}
+            width="30"
+            height="30"
+            alt="Pokemon ball logo"
+            className="logo"
+          />{' '}
+          <h1>Rostermon</h1>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

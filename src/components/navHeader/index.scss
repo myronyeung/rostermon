@@ -1,3 +1,26 @@
 .navbar {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+
+  .navbar-brand {
+    padding: 0;
+  }
+
+  h1 {
+    display: inline-block;
+    margin: 5px 0 0 0;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+  .logo {
+    margin: 0 10px 5px 0;
+    line-height: 2rem;
+  }
+
+  .nav-link {
+    margin: 0 0 2px 0;
+    padding: 0;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
 }

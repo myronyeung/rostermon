@@ -6,8 +6,13 @@ import CharmanderImage from '../../images/charmander.png';
 const Home: React.FunctionComponent = () => {
   return (
     <Container id="home">
-      Welcome to Rostermon
-      <img src={CharmanderImage} width="300" alt="Charmander" />
+      <h2>Welcome to Rostermon</h2>
+      <img
+        src={CharmanderImage}
+        width="300"
+        alt="Charmander"
+        className="hero-image"
+      />
     </Container>
   );
 };

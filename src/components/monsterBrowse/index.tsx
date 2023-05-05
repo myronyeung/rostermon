@@ -84,10 +84,18 @@ const MonsterBrowse: React.FunctionComponent = () => {
                     </div>
                   </div>
                   <div className="grid-column tags">
-                    <div className="types">{types ? types.join(' ') : ''}</div>
-                    <div className="subtypes">
-                      {subtypes ? subtypes.join(' ') : ''}
-                    </div>
+                    {types && types.length > 0
+                      ? types.map((type: string) => {
+                          return <span className="types tag">{type}</span>;
+                        })
+                      : ''}
+                    {subtypes && subtypes.length > 0
+                      ? subtypes.map((subtype: string) => {
+                          return (
+                            <span className="subtypes tag">{subtype}</span>
+                          );
+                        })
+                      : ''}
                   </div>
                 </li>
               );
