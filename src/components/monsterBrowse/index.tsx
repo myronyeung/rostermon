@@ -50,17 +50,6 @@ const MonsterBrowse: React.FunctionComponent = () => {
         className="browse-list-container overflow-scroll"
         onScroll={handleScroll}
       >
-        {monsters.loading && (
-          <div>
-            <img
-              src={Logo}
-              width="30"
-              height="30"
-              className="spinner"
-              alt="Loading monsters..."
-            />
-          </div>
-        )}
         {monsters.allMonsters && (
           <ul className="monster-list">
             {Object.keys(monsters.allMonsters).map((monster) => {
@@ -105,13 +94,24 @@ const MonsterBrowse: React.FunctionComponent = () => {
           <div>Error: {monsters.error}</div>
         )}
       </Container>
-      <h2>
+        {monsters.loading && (
+          <div style={{textAlign: "center"}}>
+            <img
+              src={Logo}
+              width="30"
+              height="30"
+              className="spinner"
+              alt="Loading monsters..."
+            />
+          </div>
+        )}
+      {/* <h2>
         Number of monsters loaded:{' '}
         {monsters &&
           monsters.allMonsters &&
           Object.keys(monsters.allMonsters).length}
       </h2>
-      <h2>{scrollTop}</h2>
+      <h2>{scrollTop}</h2> */}
     </Container>
   );
 };

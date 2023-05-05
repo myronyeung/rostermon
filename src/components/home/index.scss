@@ -3,7 +3,6 @@ $hero-image-width: 439px;
 
 @media (max-width: 575px) {
   #home {
-    color: teal;
     .intro {
       width: 80vw;
 
@@ -24,7 +23,6 @@ $hero-image-width: 439px;
 
 @media (min-width: 576px) {
   #home {
-    color: green;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,7 +49,6 @@ $hero-image-width: 439px;
 
 @media (min-width: 768px) {
   #home {
-    color: red;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,7 +75,6 @@ $hero-image-width: 439px;
 
 @media (min-width: 992px) {
   #home {
-    color: green;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,7 +102,6 @@ $hero-image-width: 439px;
 
 @media (min-width: 1200px) {
   #home {
-    color: pink;
     display: flex;
     justify-content: center;
     align-items: flex-start;
