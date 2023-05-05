@@ -21,6 +21,10 @@
             margin: 0;
           }
 
+          .grid-column.image {
+            align-self: center;
+          }
+
           .grid-column.bio,
           .grid-column.tags {
             padding: 10px;

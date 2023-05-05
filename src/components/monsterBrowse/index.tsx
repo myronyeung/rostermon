@@ -58,7 +58,7 @@ const MonsterBrowse: React.FunctionComponent = () => {
 
               return (
                 <li key={monster} className="monster-info">
-                  <div className="grid-column">
+                  <div className="grid-column image">
                     <img src={image} alt={name} className="thumbnail" />
                   </div>
                   <div className="grid-column bio">
