@@ -1,18 +1,52 @@
 #monsterBrowse {
   .browse-list-container {
-    border: 1px solid black;
     height: 600px;
   }
 
   .monster-list {
     list-style-type: none;
+    text-align: left;
 
-    span {
-      display: inline-block;
-      margin-left: 5px;
+    .monster-info {
+      margin: 5px;
+      border: 1px solid black;
+      border-radius: 5px;
+
+      span {
+        display: inline-block;
+        margin-left: 5px;
+      }
+
+      .thumbnail {
+        width: 30px;
+      }
+
+      .id {
+        color: black;
+      }
+
+      .name {
+        color: green;
+      }
+
+      .hp {
+        color: black;
+      }
+
+      .supertype {
+        background-color: orange;
+        color: white;
+      }
+
+      .types {
+        background-color: red;
+        color: white;
+      }
+
+      .subtypes {
+        background-color: yellow;
+        color: black;
+      }
     }
-  }
-  .thumbnail {
-    width: 30px;
   }
 }

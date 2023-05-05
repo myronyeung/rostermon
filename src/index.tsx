@@ -7,7 +7,7 @@ import { store } from './app/store';
 import App from './App';
 import Home from '../src/components/home';
 import MonsterBrowse from '../src/components/monsterBrowse';
-import MonsterFilter from './features/monsterFilter';
+import MonsterFilter from './features/monsterFilter/monsterFilter';
 import ErrorPage from '../src/errorPage';
 
 import reportWebVitals from './reportWebVitals';

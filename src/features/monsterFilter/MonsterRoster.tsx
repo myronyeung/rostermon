@@ -14,14 +14,14 @@ import {
   monsterState,
   monsterActions,
   fetchMonsters,
-} from '../../features/monsterSlice';
+} from './monsterSlice';
 
 import Logo from '../../../src/images/logo.svg';
 
 // Change types to a string to make it more convenient to display in MUI Data Grid.
 export type MonsterRow = { id: Id } & MonsterInfo;
 
-const Roster: React.FunctionComponent = () => {
+const MonsterRoster: React.FunctionComponent = () => {
   const monsters = useAppSelector(monsterState);
   const dispatch = useAppDispatch();
 
@@ -84,6 +84,6 @@ const Roster: React.FunctionComponent = () => {
   );
 };
 
-Roster.displayName = 'Roster';
+MonsterRoster.displayName = 'MonsterRoster';
 
-export default Roster;
+export default MonsterRoster;

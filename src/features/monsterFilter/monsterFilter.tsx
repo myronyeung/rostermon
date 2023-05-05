@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 
-import Roster from '../components/roster';
-import Details from '../components/details';
+import Roster from './MonsterRoster';
+import Details from './monsterDetails';
 
 import './monsterFilter.scss';
 

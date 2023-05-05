@@ -3,9 +3,9 @@ import { Container } from 'react-bootstrap';
 
 import { useAppSelector } from '../../app/hooks';
 
-import { monsterState } from '../../features/monsterSlice';
+import { monsterState } from './monsterSlice';
 
-const Details: React.FunctionComponent = () => {
+const MonsterDetails: React.FunctionComponent = () => {
   const monsters = useAppSelector(monsterState);
 
   return (
@@ -25,6 +25,6 @@ const Details: React.FunctionComponent = () => {
   );
 };
 
-Details.displayName = 'Details';
+MonsterDetails.displayName = 'MonsterDetails';
 
-export default Details;
+export default MonsterDetails;

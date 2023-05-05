@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-import { RootState } from '../app/store';
+import { RootState } from '../../app/store';
 
 export type Monster = Record<Id, MonsterInfo>;
 

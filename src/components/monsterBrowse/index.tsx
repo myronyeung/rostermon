@@ -4,12 +4,9 @@ import { Container } from 'react-bootstrap';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 
 import {
-  MonsterInfo,
-  Id,
   monsterState,
-  monsterActions,
   fetchMonsters,
-} from '../../features/monsterSlice';
+} from '../../features/monsterFilter/monsterSlice';
 
 import Logo from '../../../src/images/logo.svg';
 
@@ -73,16 +70,16 @@ const MonsterBrowse: React.FunctionComponent = () => {
               const { image, name, hp, supertype, types, subtypes } =
                 monsters.allMonsters[monster];
               return (
-                <li key={monster}>
-                  <span>
-                    <img src={image} alt={name} className="thumbnail" />
+                <li key={monster} className="monster-info">
+                  <img src={image} alt={name} className="thumbnail" />
+                  <span className="id">{monster}</span>
+                  <span className="name">{name}</span>
+                  <span className="hp">{hp}</span>
+                  <span className="supertype">{supertype}</span>
+                  <span className="types">{types ? types.join(' ') : ''}</span>
+                  <span className="subtypes">
+                    {subtypes ? subtypes.join(' ') : ''}
                   </span>
-                  <span>{monster}</span>
-                  <span>{name}</span>
-                  <span>{hp}</span>
-                  <span>{supertype}</span>
-                  <span>{types ? types : 'NO TYPE!'}</span>
-                  <span>{subtypes ? subtypes : 'NO TYPE!'}</span>
                 </li>
               );
             })}
@@ -92,13 +89,6 @@ const MonsterBrowse: React.FunctionComponent = () => {
           <div>Error: {monsters.error}</div>
         )}
       </Container>
-      <button
-        type="button"
-        className="btn btn-primary"
-        onClick={() => setPage(page + 1)}
-      >
-        See more monsters
-      </button>
     </Container>
   );
 };
