@@ -13,8 +13,8 @@ const ErrorPage: React.FunctionComponent = () => {
   return (
     <div id="error-page">
       <NavHeader />
-      <div>
-        <h1>Oops!</h1>
+      <div className="error-page-layout">
+        <h2>Oops!</h2>
         <p>Sorry, an unexpected error has occurred.</p>
         <p>{error.statusText || error.message}</p>
         <p>
