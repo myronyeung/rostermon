@@ -20,7 +20,11 @@ const MonsterBrowse: React.FunctionComponent = () => {
   const [scrollTop, setScrollTop] = useState(0);
 
   useEffect(() => {
-    dispatch(fetchMonsters({ page, pageSize: 100 }));
+    const debounce = setTimeout(() => {
+      dispatch(fetchMonsters({ page, pageSize: 100 }));
+    }, 2000);
+
+    return () => clearTimeout(debounce);
   }, [page]);
 
   const handleScroll = (event: React.UIEvent<HTMLElement>) => {

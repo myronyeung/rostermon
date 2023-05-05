@@ -1,12 +1,12 @@
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../node_modules/bootstrap/scss/bootstrap';
 
 body {
-  font-family: -apple-system, 'Roboto', 'Helvetica Neue', sans-serif;
+  font-family: 'Gill Sans', Verdana, Roboto, 'Helvetica Neue', sans-serif,
+    -apple-system;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Courier New', monospace;
 }
