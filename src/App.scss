@@ -17,14 +17,30 @@
   }
 }
 
-.modal-image {
-  .modal-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@media (max-width: 575px) {
+  .modal-image {
+    .modal-body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-    .image {
-      width: 400px;
+      .image {
+        width: 90vw;
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .modal-image {
+    .modal-body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .image {
+        width: 400px;
+      }
     }
   }
 }
