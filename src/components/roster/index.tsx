@@ -19,17 +19,14 @@ import {
 import Logo from '../../../src/images/logo.svg';
 
 // Change types to a string to make it more convenient to display in MUI Data Grid.
-export type MonsterRow = { id: Id } & { types: string } & Omit<
-    MonsterInfo,
-    'types'
-  >;
+export type MonsterRow = { id: Id } & MonsterInfo;
 
 const Roster: React.FunctionComponent = () => {
   const monsters = useAppSelector(monsterState);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchMonsters());
+    dispatch(fetchMonsters({ page: 1, pageSize: 100 }));
   }, []);
 
   const handleEvent: GridEventListener<'rowClick'> = (
@@ -47,7 +44,6 @@ const Roster: React.FunctionComponent = () => {
       arr.push({
         ...value,
         id: key,
-        types: monsters.allMonsters[key].types.join(', '),
       });
     });
 
@@ -60,7 +56,9 @@ const Roster: React.FunctionComponent = () => {
     { field: 'id', headerName: 'Id', width: 100 },
     { field: 'name', headerName: 'Name', width: 200 },
     { field: 'hp', headerName: 'HP', width: 30 },
-    { field: 'types', headerName: 'Energy', width: 200 },
+    { field: 'supertype', headerName: 'Supertype', width: 150 },
+    { field: 'types', headerName: 'Types', width: 200 },
+    { field: 'subtypes', headerName: 'Subtypes', width: 200 },
   ];
 
   return (

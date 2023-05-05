@@ -1,0 +1,18 @@
+#monsterBrowse {
+  .browse-list-container {
+    border: 1px solid black;
+    height: 600px;
+  }
+
+  .monster-list {
+    list-style-type: none;
+
+    span {
+      display: inline-block;
+      margin-left: 5px;
+    }
+  }
+  .thumbnail {
+    width: 30px;
+  }
+}

@@ -23,6 +23,14 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
+        path: '/',
+        element: <Home />,
+      },
+      {
+        path: '/rostermon',
+        element: <Home />,
+      },
+      {
         path: '/rostermon/browse',
         element: <MonsterBrowse />,
       },
@@ -31,10 +39,6 @@ const router = createBrowserRouter([
         element: <MonsterFilter />,
       },
     ],
-  },
-  {
-    path: '/rostermon',
-    element: <App />,
   },
 ]);
 

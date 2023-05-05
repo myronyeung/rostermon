@@ -8,8 +8,10 @@ export type Monster = Record<Id, MonsterInfo>;
 export type MonsterInfo = {
   name: string;
   hp: number;
-  types: string[];
   image: string;
+  supertype: string;
+  types?: string[];
+  subtypes?: string[];
 };
 
 export type Id = string;
@@ -30,11 +32,14 @@ const initialState: MonsterState = {
 
 export const fetchMonsters = createAsyncThunk(
   'monster/fetchMonsters',
-  async () => {
+  async (params: { page: number; pageSize: number }) => {
+    const { page, pageSize } = params;
     return (
       axios
-        .get('https://api.pokemontcg.io/v2/cards?page=1&pageSize=250')
-        // data.data is not a typo. Monsters are an array assigned to a key named 'data' in response.
+        .get(
+          `https://api.pokemontcg.io/v2/cards?page=${page}&pageSize=${pageSize}`
+        )
+        // data.data is not a typo. Monsters are an array assigned to a key named 'data' in the response.
         .then((response: any) =>
           response.data.data.reduce((acc: Monster, monster: any): Monster => {
             acc[monster.id] = { ...monster, image: monster.images.large };
@@ -63,7 +68,7 @@ export const monsterSlice = createSlice({
     });
     builder.addCase(fetchMonsters.fulfilled, (state, action) => {
       state.loading = false;
-      state.allMonsters = action.payload;
+      state.allMonsters = Object.assign(state.allMonsters, action.payload); // Append new monsters to existing collection.
       state.error = '';
     });
     builder.addCase(fetchMonsters.rejected, (state, action) => {
