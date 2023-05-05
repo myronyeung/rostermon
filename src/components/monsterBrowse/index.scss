@@ -1,7 +1,7 @@
 #monsterBrowse {
   .browse-list-container {
     width: 900px;
-    height: 800px;
+    height: 80vh;
   }
 
   .monster-list {
@@ -87,6 +87,14 @@
         background-color: yellow;
         color: black;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #monsterBrowse {
+    .browse-list-container {
+      width: 90vh;
     }
   }
 }
