@@ -16,3 +16,15 @@
     transform: rotate(359deg);
   }
 }
+
+.modal-image {
+  .modal-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .image {
+      width: 400px;
+    }
+  }
+}

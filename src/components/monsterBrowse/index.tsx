@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Modal } from 'react-bootstrap';
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 
@@ -18,6 +18,7 @@ const MonsterBrowse: React.FunctionComponent = () => {
 
   const [page, setPage] = useState(1);
   const [scrollTop, setScrollTop] = useState(0);
+  const [modal, setModal] = useState({ showModal: false, image: '' });
 
   useEffect(() => {
     const debounce = setTimeout(() => {
@@ -57,7 +58,11 @@ const MonsterBrowse: React.FunctionComponent = () => {
                 monsters.allMonsters[monster];
 
               return (
-                <li key={monster} className="monster-info">
+                <li
+                  key={monster}
+                  className="monster-info"
+                  onClick={() => setModal({ showModal: true, image })}
+                >
                   <div className="grid-column image">
                     <img src={image} alt={name} className="thumbnail" />
                   </div>
@@ -112,6 +117,20 @@ const MonsterBrowse: React.FunctionComponent = () => {
           Object.keys(monsters.allMonsters).length}
       </h2>
       <h2>{scrollTop}</h2> */}
+      <Modal
+        show={modal.showModal}
+        onHide={() => {
+          setModal({ showModal: false, image: '' });
+        }}
+        className="modal-image"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <img src={modal.image} className="image" />
+        </Modal.Body>
+      </Modal>
     </Container>
   );
 };
