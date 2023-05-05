@@ -26,41 +26,18 @@ $hero-image-width: 439px;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   #home {
-    color: green;
-    display: block;
-    justify-content: center;
-
     .intro {
-      width: 80vh;
+      width: 90vh;
+    }
 
-      .welcome-message {
-        text-align: center;
-      }
+    .welcome-message {
+      text-align: center;
     }
 
     .hero-image {
       display: none;
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  #home {
-    color: blue;
-    .intro {
-      width: 30vh;
-    }
-
-    .welcome-message {
-      text-align: justify;
-    }
-
-    .hero-image {
-      display: block;
-      width: calc($hero-image-width / 3);
-      height: calc($hero-image-height / 3);
     }
   }
 }

@@ -130,16 +130,6 @@ const MonsterRoster: React.FunctionComponent = () => {
                           })
                         : ''}
                     </div>
-                    <div>
-                      {shouldDisplayMonster(
-                        monsters.activeTags,
-                        supertype,
-                        types,
-                        subtypes
-                      )
-                        ? 'Active'
-                        : 'Inactive'}
-                    </div>
                   </li>
                 );
               }
