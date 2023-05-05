@@ -94,17 +94,17 @@ const MonsterBrowse: React.FunctionComponent = () => {
           <div>Error: {monsters.error}</div>
         )}
       </Container>
-        {monsters.loading && (
-          <div style={{textAlign: "center"}}>
-            <img
-              src={Logo}
-              width="30"
-              height="30"
-              className="spinner"
-              alt="Loading monsters..."
-            />
-          </div>
-        )}
+      {monsters.loading && (
+        <div style={{ textAlign: 'center' }}>
+          <img
+            src={Logo}
+            width="30"
+            height="30"
+            className="spinner"
+            alt="Loading monsters..."
+          />
+        </div>
+      )}
       {/* <h2>
         Number of monsters loaded:{' '}
         {monsters &&
