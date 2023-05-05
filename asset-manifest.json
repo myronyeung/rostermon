@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/rostermon/static/css/main.15e8de33.css",
-    "main.js": "/rostermon/static/js/main.1731e262.js",
+    "main.css": "/rostermon/static/css/main.50695d46.css",
+    "main.js": "/rostermon/static/js/main.e78d090c.js",
     "static/js/787.1203c745.chunk.js": "/rostermon/static/js/787.1203c745.chunk.js",
     "static/media/charmander.png": "/rostermon/static/media/charmander.323f87ffcce95e734d02.png",
     "static/media/sad.jpg": "/rostermon/static/media/sad.c21be75ffa9321f7e2ae.jpg",
     "static/media/logo.svg": "/rostermon/static/media/logo.2db7de44dd9ea6558c0113d7d9e3db9d.svg",
     "index.html": "/rostermon/index.html",
-    "main.15e8de33.css.map": "/rostermon/static/css/main.15e8de33.css.map",
-    "main.1731e262.js.map": "/rostermon/static/js/main.1731e262.js.map",
+    "main.50695d46.css.map": "/rostermon/static/css/main.50695d46.css.map",
+    "main.e78d090c.js.map": "/rostermon/static/js/main.e78d090c.js.map",
     "787.1203c745.chunk.js.map": "/rostermon/static/js/787.1203c745.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.15e8de33.css",
-    "static/js/main.1731e262.js"
+    "static/css/main.50695d46.css",
+    "static/js/main.e78d090c.js"
   ]
 }
