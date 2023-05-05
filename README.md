@@ -4,7 +4,7 @@
 
 # Development Information
 
-Built with Create React App, Redux Toolkit, Typescript, Bootstrap, and Sass.
+Built with Create React App, Redux Toolkit, Typescript, React Bootstrap, and Sass.
 
 ## Available Scripts
 

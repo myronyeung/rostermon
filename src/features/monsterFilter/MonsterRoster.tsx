@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
+import {Button} from 'react-bootstrap';
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
-
 import { monsterState, monsterActions, fetchMonsters } from './monsterSlice';
 
 import Logo from '../../../src/images/logo.svg';
@@ -38,10 +38,10 @@ const MonsterRoster: React.FunctionComponent = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchMonsters({ page: 1, pageSize: 100 }));
-  }, []);
+    dispatch(fetchMonsters({ page: monsters.page, pageSize: 100 }));
+  }, [monsters.page]);
 
-  const handleEvent = (event: React.UIEvent<HTMLElement>) => {
+  const handleSelectEvent = (event: React.UIEvent<HTMLElement>) => {
     dispatch(monsterActions.select(event.currentTarget.id));
   };
 
@@ -81,7 +81,7 @@ const MonsterRoster: React.FunctionComponent = () => {
                     id={monster}
                     key={monster}
                     className="monster-info"
-                    onClick={handleEvent}
+                    onClick={handleSelectEvent}
                     tabIndex={0}
                   >
                     <div className="grid-column">
@@ -90,7 +90,7 @@ const MonsterRoster: React.FunctionComponent = () => {
                     <div className="grid-column bio">
                       <div className="id">{monster}</div>
                       <div className="name">
-                        <a href="#" onClick={handleEvent}>
+                        <a href="#" onClick={handleSelectEvent}>
                           {name}
                         </a>
                       </div>
@@ -133,6 +133,7 @@ const MonsterRoster: React.FunctionComponent = () => {
           <div>Error: {monsters.error}</div>
         )}
       </div>
+      <Button variant="primary" onClick={() => dispatch(monsterActions.incrementPage())}>Load more monsters</Button>
     </div>
   );
 };

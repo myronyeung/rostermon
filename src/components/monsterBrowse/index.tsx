@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import {
   monsterState,
   fetchMonsters,
+  monsterActions,
 } from '../../features/monsterFilter/monsterSlice';
 
 import Logo from '../../../src/images/logo.svg';
@@ -16,17 +17,16 @@ const MonsterBrowse: React.FunctionComponent = () => {
   const monsters = useAppSelector(monsterState);
   const dispatch = useAppDispatch();
 
-  const [page, setPage] = useState(1);
   const [scrollTop, setScrollTop] = useState(0);
   const [modal, setModal] = useState({ showModal: false, image: '' });
 
   useEffect(() => {
     const debounce = setTimeout(() => {
-      dispatch(fetchMonsters({ page, pageSize: 100 }));
+      dispatch(fetchMonsters({ page: monsters.page, pageSize: 100 }));
     }, 2000);
 
     return () => clearTimeout(debounce);
-  }, [page]);
+  }, [monsters.page]);
 
   const handleScroll = (event: React.UIEvent<HTMLElement>) => {
     // Reference: https://stackoverflow.com/a/42860948
@@ -41,7 +41,7 @@ const MonsterBrowse: React.FunctionComponent = () => {
         event.currentTarget.clientHeight <
       1
     ) {
-      setPage(page + 1);
+      dispatch(monsterActions.incrementPage());
     }
   };
 
@@ -69,14 +69,7 @@ const MonsterBrowse: React.FunctionComponent = () => {
                   </div>
                   <div className="grid-column bio">
                     <div className="id">{monster}</div>
-                    <div className="name">
-                      <a
-                        href="#"
-                        onClick={() => setModal({ showModal: true, image })}
-                      >
-                        {name}
-                      </a>
-                    </div>
+                    <div className="name"><a href="#" onClick={() => setModal({ showModal: true, image })}>{name}</a></div>
                     <div>
                       <div className="supertype">{supertype}</div>
                       {hp && (
@@ -119,7 +112,7 @@ const MonsterBrowse: React.FunctionComponent = () => {
         </div>
       )}
       {/* 
-      DEBUG:
+      DEBUG
       <h2>
         Number of monsters loaded:{' '}
         {monsters &&

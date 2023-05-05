@@ -25,6 +25,7 @@ export interface MonsterState {
   allSupertypes: string[];
   allTypes: string[];
   allSubtypes: string[];
+  page: number;
 }
 
 const initialState: MonsterState = {
@@ -89,6 +90,7 @@ const initialState: MonsterState = {
     'ex',
     'ex-3',
   ],
+  page: 1,
 };
 
 export const fetchMonsters = createAsyncThunk(
@@ -118,6 +120,9 @@ export const monsterSlice = createSlice({
   reducers: {
     // createSlice automatically generates Action Creators
     // Use the PayloadAction type to declare the contents of `action.payload`
+    incrementPage: (state) => {
+      state.page += 1;
+    },
     select: (state, action: PayloadAction<string>) => {
       state.selectedId = action.payload;
     },
