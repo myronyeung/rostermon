@@ -1,7 +1,7 @@
 $hero-image-height: 500px;
 $hero-image-width: 439px;
 
-#home {
+#home {color: red;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +25,7 @@ $hero-image-width: 439px;
 }
 
 @media screen and (max-width: 480px) {
-  #home {
+  #home {color: green;
     display: block;
     justify-content: center;
 
@@ -48,7 +48,7 @@ $hero-image-width: 439px;
 }
 
 @media screen and (max-width: 768px) {
-  #home {
+  #home {color: blue;
     .intro {
       width: 30vh;
     }
