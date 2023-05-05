@@ -52,7 +52,7 @@ const MonsterBrowse: React.FunctionComponent = () => {
         onScroll={handleScroll}
       >
         {monsters.allMonsters && (
-          <ul className="monster-list">
+          <ul className="monster-list" tabIndex={0}>
             {Object.keys(monsters.allMonsters).map((monster) => {
               const { image, name, hp, supertype, types, subtypes } =
                 monsters.allMonsters[monster];
@@ -62,13 +62,21 @@ const MonsterBrowse: React.FunctionComponent = () => {
                   key={monster}
                   className="monster-info"
                   onClick={() => setModal({ showModal: true, image })}
+                  tabIndex={0}
                 >
                   <div className="grid-column image">
                     <img src={image} alt={name} className="thumbnail" />
                   </div>
                   <div className="grid-column bio">
                     <div className="id">{monster}</div>
-                    <div className="name">{name}</div>
+                    <div className="name">
+                      <a
+                        href="#"
+                        onClick={() => setModal({ showModal: true, image })}
+                      >
+                        {name}
+                      </a>
+                    </div>
                     <div>
                       <div className="supertype">{supertype}</div>
                       {hp && (
@@ -110,7 +118,9 @@ const MonsterBrowse: React.FunctionComponent = () => {
           />
         </div>
       )}
-      {/* <h2>
+      {/* 
+      DEBUG:
+      <h2>
         Number of monsters loaded:{' '}
         {monsters &&
           monsters.allMonsters &&

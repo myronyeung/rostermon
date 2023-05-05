@@ -13,6 +13,12 @@
 
 .tag.button {
   opacity: 0.4;
+
+  a:link,
+  a:visited {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 .tag.button.active {

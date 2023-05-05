@@ -33,7 +33,9 @@ const Tag: React.FunctionComponent<TagProps> = (props: TagProps) => {
       className={`tag button ${category} ${isActive ? 'active' : ''}`}
       onClick={handleClick}
     >
-      {name}
+      <a href="#" onClick={handleClick}>
+        {name}
+      </a>
     </span>
   );
 };

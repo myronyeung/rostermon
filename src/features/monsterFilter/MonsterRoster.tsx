@@ -75,7 +75,7 @@ const MonsterRoster: React.FunctionComponent = () => {
           </div>
         )}
         {monsters.allMonsters && (
-          <ul className="monster-list">
+          <ul className="monster-list" tabIndex={0}>
             {Object.keys(monsters.allMonsters).map((monster) => {
               const { image, name, hp, supertype, types, subtypes } =
                 monsters.allMonsters[monster];
@@ -93,13 +93,18 @@ const MonsterRoster: React.FunctionComponent = () => {
                     key={monster}
                     className="monster-info"
                     onClick={handleEvent}
+                    tabIndex={0}
                   >
                     <div className="grid-column">
                       <img src={image} alt={name} className="thumbnail" />
                     </div>
                     <div className="grid-column bio">
                       <div className="id">{monster}</div>
-                      <div className="name">{name}</div>
+                      <div className="name">
+                        <a href="#" onClick={handleEvent}>
+                          {name}
+                        </a>
+                      </div>
                       <div>
                         <div className="supertype">{supertype}</div>
                         {hp && (

@@ -53,6 +53,12 @@
           .name {
             font-size: 2rem;
             line-height: 3rem;
+
+            a:link,
+            a:visited {
+              text-decoration: none;
+              color: inherit;
+            }
           }
 
           .hp-label {
@@ -128,6 +134,12 @@
           .name {
             font-size: 2rem;
             line-height: 3rem;
+
+            a:link,
+            a:visited {
+              text-decoration: none;
+              color: inherit;
+            }
           }
 
           .hp-label {

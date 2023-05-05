@@ -2,7 +2,6 @@
 
 @media (max-width: 991px) {
   #monsterFilter {
-    color: red;
     #tagFilter {
       margin: 0 0 20px 0;
       width: 80vw;
@@ -67,6 +66,12 @@
             .name {
               font-size: 2rem;
               line-height: 3rem;
+
+              a:link,
+              a:visited {
+                text-decoration: none;
+                color: inherit;
+              }
             }
 
             .hp-label {
@@ -96,7 +101,6 @@
 
 @media (min-width: 992px) {
   #monsterFilter {
-    color: orange;
     #tagFilter {
       margin: 0 auto 20px auto;
       width: 90vw;
@@ -161,6 +165,12 @@
             .name {
               font-size: 2rem;
               line-height: 3rem;
+
+              a:link,
+              a:visited {
+                text-decoration: none;
+                color: inherit;
+              }
             }
 
             .hp-label {
@@ -186,11 +196,12 @@
         padding: 20px 0 0 0;
         width: 300px;
 
-      .monster-large-image {
-        border-radius: 14px; // Counteract non-transparent card image corners ruining box-shadow.
-        box-shadow: 7px 7px 15px rgb(0, 0, 0, 0.5);
-        width: 300px;
-      }}
+        .monster-large-image {
+          border-radius: 14px; // Counteract non-transparent card image corners ruining box-shadow.
+          box-shadow: 7px 7px 15px rgb(0, 0, 0, 0.5);
+          width: 300px;
+        }
+      }
     }
   }
 }
