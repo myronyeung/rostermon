@@ -1,8 +1,12 @@
+@import '../../App.scss';
+
 .navbar {
   margin-bottom: 20px;
 
   .navbar-brand {
     padding: 0;
+
+    @include unstyled-link;
   }
 
   h1 {
