@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
@@ -90,9 +91,9 @@ const MonsterRoster: React.FunctionComponent = () => {
                     <div className="grid-column bio">
                       <div className="id">{monster}</div>
                       <div className="name">
-                        <a href="#" onClick={handleSelectEvent}>
+                        <Link to={'/filter'} onClick={handleSelectEvent}>
                           {name}
-                        </a>
+                        </Link>
                       </div>
                       <div>
                         <div className="supertype">{supertype}</div>

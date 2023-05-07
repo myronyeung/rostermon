@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
@@ -70,12 +71,12 @@ const MonsterBrowse: React.FunctionComponent = () => {
                   <div className="grid-column bio">
                     <div className="id">{monster}</div>
                     <div className="name">
-                      <a
-                        href="#"
+                      <Link
+                        to="/browse"
                         onClick={() => setModal({ showModal: true, image })}
                       >
                         {name}
-                      </a>
+                      </Link>
                     </div>
                     <div>
                       <div className="supertype">{supertype}</div>

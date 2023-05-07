@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import {
@@ -33,9 +34,9 @@ const Tag: React.FunctionComponent<TagProps> = (props: TagProps) => {
       className={`tag button ${category} ${isActive ? 'active' : ''}`}
       onClick={handleClick}
     >
-      <a href="#" onClick={handleClick}>
+      <Link to={'/filter'} onClick={handleClick}>
         {name}
-      </a>
+      </Link>
     </span>
   );
 };
