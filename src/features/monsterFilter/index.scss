@@ -93,7 +93,7 @@
 
       .monster-roster-footer {
         padding: 20px;
-      
+
         button {
           display: block;
           margin: 0 auto;
@@ -115,21 +115,23 @@
           width: 600px;
 
           .monster-list {
+            margin-right: 20px;
+
             .monster-info {
               .id {
                 font-size: 0.75rem;
                 line-height: 0.75rem;
               }
-  
+
               .name {
                 font-size: 2rem;
                 line-height: 3rem;
               }
-  
+
               .hp {
                 font-size: 1.5rem;
               }
-  
+
               .supertype {
                 margin-right: 30px;
                 font-size: 1.5rem;

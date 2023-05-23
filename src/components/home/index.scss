@@ -7,7 +7,7 @@ $hero-image-width: 439px;
   align-items: center;
 
   .intro {
-    margin: 0;
+    margin: 0 20px 0 0;
     width: 40vw;
 
     h2 {
@@ -29,6 +29,7 @@ $hero-image-width: 439px;
     display: block;
 
     .intro {
+      margin: 0 auto;
       width: 80vw;
     }
 
@@ -59,8 +60,6 @@ $hero-image-width: 439px;
 @media (min-width: 992px) {
   #home {
     .intro {
-      margin: 0 20px 0 0;
-
       .welcome-message {
         text-align: justify;
       }
