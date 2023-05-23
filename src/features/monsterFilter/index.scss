@@ -1,24 +1,22 @@
 @import '../../App.scss';
 
-@media (max-width: 991px) {
-  #monsterFilter {
-    #tagFilter {
-      margin: 0 auto 20px auto;
-      width: 95vw;
-      @include shadow-border;
-      background-color: #f8f9fa;
-    }
-    .roster-details-layout {
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: center;
-      padding: 20px;
+#monsterFilter {
+  #tagFilter {
+    margin: 0 auto 20px auto;
+    width: 95vw;
+    @include shadow-border;
+    background-color: #f8f9fa;
+  }
 
-      #monsterRoster {
-        .browse-list-container {
-          overflow-y: scroll;
-          height: 80vh;
-        }
+  .roster-details-layout {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+    #monsterRoster {
+      .browse-list-container {
+        overflow-y: scroll;
+        height: 80vh;
 
         .monster-list {
           list-style-type: none;
@@ -86,112 +84,63 @@
 
             .supertype {
               display: block;
+              margin-right: 0;
               font-size: 1.25rem;
             }
           }
         }
       }
 
-      #monsterDetails {
-        display: none;
+      .monster-roster-footer {
+        padding: 20px;
+      
+        button {
+          display: block;
+          margin: 0 auto;
+        }
       }
+    }
+
+    #monsterDetails {
+      display: none;
     }
   }
 }
 
 @media (min-width: 992px) {
   #monsterFilter {
-    #tagFilter {
-      margin: 0 auto 20px auto;
-      width: 95vw;
-      @include shadow-border;
-      background-color: #f8f9fa;
-    }
     .roster-details-layout {
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: center;
-
       #monsterRoster {
         .browse-list-container {
-          overflow-y: scroll;
           width: 600px;
-          height: 80vh;
-        }
 
-        .monster-list {
-          list-style-type: none;
-          padding-left: 0;
-          text-align: left;
-
-          .monster-info {
-            display: grid;
-            grid-template-columns: auto auto 4fr;
-            margin: 20px 10px;
-            @include shadow-border;
-
-            .grid-column {
-              margin: 0;
-            }
-
-            .grid-column.bio,
-            .grid-column.tags {
-              padding: 10px;
-            }
-
-            .grid-column.bio {
-              display: grid;
-              grid-template-rows: 0.2fr auto 0.5fr;
-            }
-
-            .grid-column.tags {
-              text-align: right;
-            }
-
-            div {
-              display: inline-block;
-            }
-
-            .thumbnail {
-              height: 118px;
-            }
-
-            .id {
-              font-size: 0.75rem;
-              line-height: 0.75rem;
-              color: black;
-            }
-
-            .name {
-              font-size: 2rem;
-              line-height: 3rem;
-
-              a:link,
-              a:visited {
-                text-decoration: none;
-                color: inherit;
+          .monster-list {
+            .monster-info {
+              .id {
+                font-size: 0.75rem;
+                line-height: 0.75rem;
               }
-            }
-
-            .hp-label {
-              font-weight: bold;
-            }
-
-            .hp {
-              font-size: 1.5rem;
-              font-weight: normal;
-              color: black;
-            }
-
-            .supertype {
-              margin-right: 30px;
-              font-size: 1.5rem;
+  
+              .name {
+                font-size: 2rem;
+                line-height: 3rem;
+              }
+  
+              .hp {
+                font-size: 1.5rem;
+              }
+  
+              .supertype {
+                margin-right: 30px;
+                font-size: 1.5rem;
+              }
             }
           }
         }
       }
 
       #monsterDetails {
+        display: block;
         margin: 0;
         padding: 20px 0 0 0;
         width: 300px;
@@ -203,14 +152,5 @@
         }
       }
     }
-  }
-}
-
-.monster-roster-footer {
-  padding: 20px;
-
-  button {
-    display: block;
-    margin: 0 auto;
   }
 }

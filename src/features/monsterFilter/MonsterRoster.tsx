@@ -139,7 +139,7 @@ const MonsterRoster: React.FunctionComponent = () => {
           variant="primary"
           onClick={() => dispatch(monsterActions.incrementPage())}
         >
-          Load more monsters
+          Load more cards
         </Button>
       </div>
     </div>
