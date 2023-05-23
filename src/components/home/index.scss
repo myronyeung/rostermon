@@ -1,19 +1,35 @@
 $hero-image-height: 500px;
 $hero-image-width: 439px;
 
+#home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .intro {
+    margin: 0;
+    width: 40vw;
+
+    h2 {
+      text-align: center;
+    }
+
+    .welcome-message {
+      text-align: center;
+    }
+  }
+
+  .hero-image {
+    display: block;
+  }
+}
+
 @media (max-width: 575px) {
   #home {
+    display: block;
+
     .intro {
-      margin: 0 auto;
       width: 80vw;
-
-      h2 {
-        text-align: center;
-      }
-
-      .welcome-message {
-        text-align: center;
-      }
     }
 
     .hero-image {
@@ -24,24 +40,7 @@ $hero-image-width: 439px;
 
 @media (min-width: 576px) {
   #home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .intro {
-      width: 40vw;
-
-      h2 {
-        text-align: center;
-      }
-
-      .welcome-message {
-        text-align: center;
-      }
-    }
-
     .hero-image {
-      display: block;
       width: calc($hero-image-width / 3);
       height: calc($hero-image-height / 3);
     }
@@ -50,24 +49,7 @@ $hero-image-width: 439px;
 
 @media (min-width: 768px) {
   #home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .intro {
-      width: 40vw;
-
-      h2 {
-        text-align: center;
-      }
-
-      .welcome-message {
-        text-align: center;
-      }
-    }
-
     .hero-image {
-      display: block;
       width: calc($hero-image-width / 2);
       height: calc($hero-image-height / 2);
     }
@@ -76,17 +58,8 @@ $hero-image-width: 439px;
 
 @media (min-width: 992px) {
   #home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     .intro {
       margin: 0 20px 0 0;
-      width: 40vw;
-
-      h2 {
-        text-align: center;
-      }
 
       .welcome-message {
         text-align: justify;
@@ -94,7 +67,6 @@ $hero-image-width: 439px;
     }
 
     .hero-image {
-      display: block;
       width: calc($hero-image-width / 1.5);
       height: calc($hero-image-height / 1.5);
     }
@@ -103,17 +75,11 @@ $hero-image-width: 439px;
 
 @media (min-width: 1200px) {
   #home {
-    display: flex;
-    justify-content: center;
     align-items: flex-start;
 
     .intro {
       margin: 100px 20px 0 0;
       width: 30vw;
-
-      h2 {
-        text-align: center;
-      }
 
       .welcome-message {
         text-align: justify;
@@ -121,7 +87,6 @@ $hero-image-width: 439px;
     }
 
     .hero-image {
-      display: block;
       width: $hero-image-width;
       height: $hero-image-height;
     }
