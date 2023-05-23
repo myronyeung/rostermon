@@ -1,80 +1,78 @@
 @import '../../App.scss';
 
-@media (max-width: 575px) {
-  #monsterBrowse {
-    .browse-list-container {
-      margin: 0 auto;
-      width: 95vw;
-      height: 90vh;
+#monsterBrowse {
+  .browse-list-container {
+    margin: 0 auto;
+    width: 95vw;
+    height: 90vh;
 
-      .monster-list {
-        list-style-type: none;
-        padding-left: 0;
-        text-align: left;
+    .monster-list {
+      list-style-type: none;
+      padding-left: 0;
+      text-align: left;
 
-        .monster-info {
+      .monster-info {
+        display: grid;
+        grid-template-columns: auto auto 4fr;
+        margin: 20px 10px;
+        @include shadow-border;
+
+        .grid-column {
+          margin: 0;
+        }
+
+        .grid-column.bio,
+        .grid-column.tags {
+          padding: 10px;
+        }
+
+        .grid-column.bio {
           display: grid;
-          grid-template-columns: auto auto 4fr;
-          margin: 20px 10px;
-          @include shadow-border;
+          grid-template-rows: 0.2fr auto 0.5fr;
+        }
 
-          .grid-column {
-            margin: 0;
+        .grid-column.tags {
+          text-align: right;
+        }
+
+        div {
+          display: inline-block;
+        }
+
+        .thumbnail {
+          height: 118px;
+        }
+
+        .id {
+          font-size: 0.5rem;
+          line-height: 0.5rem;
+          color: black;
+        }
+
+        .name {
+          font-size: 1.5rem;
+          line-height: 2rem;
+
+          a:link,
+          a:visited {
+            text-decoration: none;
+            color: inherit;
           }
+        }
 
-          .grid-column.bio,
-          .grid-column.tags {
-            padding: 10px;
-          }
+        .hp-label {
+          font-weight: bold;
+        }
 
-          .grid-column.bio {
-            display: grid;
-            grid-template-rows: 0.2fr auto 0.5fr;
-          }
+        .hp {
+          font-size: 1rem;
+          font-weight: normal;
+          color: black;
+        }
 
-          .grid-column.tags {
-            text-align: right;
-          }
-
-          div {
-            display: inline-block;
-          }
-
-          .thumbnail {
-            height: 118px;
-          }
-
-          .id {
-            font-size: 0.5rem;
-            line-height: 0.5rem;
-            color: black;
-          }
-
-          .name {
-            font-size: 1.5rem;
-            line-height: 2rem;
-
-            a:link,
-            a:visited {
-              text-decoration: none;
-              color: inherit;
-            }
-          }
-
-          .hp-label {
-            font-weight: bold;
-          }
-
-          .hp {
-            font-size: 1rem;
-            font-weight: normal;
-            color: black;
-          }
-
-          .supertype {
-            display: block;
-            font-size: 1.25rem;
-          }
+        .supertype {
+          display: block;
+          font-size: 1.25rem;
         }
       }
     }
@@ -84,72 +82,22 @@
 @media (min-width: 576px) {
   #monsterBrowse {
     .browse-list-container {
-      margin: 0 auto;
       width: 900px;
-      height: 90vh;
 
       .monster-list {
-        list-style-type: none;
-        padding-left: 0;
-        text-align: left;
-
         .monster-info {
-          display: grid;
-          grid-template-columns: auto auto 4fr;
-          margin: 20px 10px;
-          @include shadow-border;
-
-          .grid-column {
-            margin: 0;
-          }
-
-          .grid-column.bio,
-          .grid-column.tags {
-            padding: 10px;
-          }
-
-          .grid-column.bio {
-            display: grid;
-            grid-template-rows: 0.2fr auto 0.5fr;
-          }
-
-          .grid-column.tags {
-            text-align: right;
-          }
-
-          div {
-            display: inline-block;
-          }
-
-          .thumbnail {
-            height: 118px;
-          }
-
           .id {
             font-size: 0.75rem;
             line-height: 0.75rem;
-            color: black;
           }
 
           .name {
             font-size: 2rem;
             line-height: 3rem;
-
-            a:link,
-            a:visited {
-              text-decoration: none;
-              color: inherit;
-            }
-          }
-
-          .hp-label {
-            font-weight: bold;
           }
 
           .hp {
             font-size: 1.5rem;
-            font-weight: normal;
-            color: black;
           }
 
           .supertype {
