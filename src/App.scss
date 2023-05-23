@@ -27,13 +27,28 @@
   }
 }
 
+.error-page-layout {
+  width: 50vw;
+  margin: 0 auto;
+}
+
+/* Modal */
+
+.modal-image {
+  .modal-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .image {
+      width: 90vw;
+    }
+  }
+}
+
 @media (max-width: 575px) {
   .modal-image {
     .modal-body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
       .image {
         width: 90vw;
       }
@@ -44,18 +59,9 @@
 @media (min-width: 576px) {
   .modal-image {
     .modal-body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
       .image {
         width: 400px;
       }
     }
   }
-}
-
-.error-page-layout {
-  width: 50vw;
-  margin: 0 auto;
 }
