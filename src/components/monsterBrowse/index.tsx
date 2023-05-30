@@ -9,6 +9,7 @@ import {
   fetchMonsters,
   monsterActions,
 } from '../../features/monsterFilter/monsterSlice';
+import MonsterListItem from '../../components/monsterListItem';
 
 import Logo from '../../../src/images/logo.svg';
 
@@ -19,7 +20,7 @@ const MonsterBrowse: React.FunctionComponent = () => {
   const dispatch = useAppDispatch();
 
   const [scrollTop, setScrollTop] = useState(0);
-  const [modal, setModal] = useState({ showModal: false, image: '' });
+  const [modal, setModal] = useState({ showModal: false, name: '', image: '' });
 
   useEffect(() => {
     const debounce = setTimeout(() => {
@@ -46,8 +47,8 @@ const MonsterBrowse: React.FunctionComponent = () => {
     }
   };
 
-  const handleSelectEvent = (image: string) => {
-    return () => setModal({ showModal: true, image });
+  const handleSelectEvent = (name: string, image: string) => {
+    return () => setModal({ showModal: true, name, image });
   };
 
   return (
@@ -59,49 +60,14 @@ const MonsterBrowse: React.FunctionComponent = () => {
         {monsters.allMonsters && (
           <ul className="monster-list" tabIndex={0}>
             {Object.keys(monsters.allMonsters).map((monster) => {
-              const { image, name, hp, supertype, types, subtypes } =
-                monsters.allMonsters[monster];
+              const { name, image } = monsters.allMonsters[monster];
 
               return (
-                <li
-                  id={monster}
-                  key={monster}
-                  className="monster-info"
-                  onClick={handleSelectEvent(image)}
-                  tabIndex={0}
-                >
-                  <div className="grid-column image">
-                    <img src={image} alt={name} className="thumbnail" />
-                  </div>
-                  <div className="grid-column bio">
-                    <div className="id">{monster}</div>
-                    <div className="name">
-                      <Link to="/browse" onClick={handleSelectEvent(image)}>
-                        {name}
-                      </Link>
-                    </div>
-                    <div>
-                      <div className="supertype">{supertype}</div>
-                      {hp && (
-                        <div className="hp-label">
-                          HP <span className="hp">{hp}</span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                  <div className="grid-column tags">
-                    {types && types.length > 0
-                      ? types.map((type: string) => {
-                          return <span className="tag type">{type}</span>;
-                        })
-                      : ''}
-                    {subtypes && subtypes.length > 0
-                      ? subtypes.map((subtype: string) => {
-                          return <span className="tag subtype">{subtype}</span>;
-                        })
-                      : ''}
-                  </div>
-                </li>
+                <MonsterListItem
+                  monsterInfo={monsters.allMonsters[monster]}
+                  handleSelectEvent={handleSelectEvent(name, image)}
+                  link={'/browse'}
+                />
               );
             })}
           </ul>
@@ -124,12 +90,12 @@ const MonsterBrowse: React.FunctionComponent = () => {
       <Modal
         show={modal.showModal}
         onHide={() => {
-          setModal({ showModal: false, image: '' });
+          setModal({ showModal: false, name: '', image: '' });
         }}
         className="modal-image"
       >
         <Modal.Header closeButton>
-          <Modal.Title></Modal.Title>
+          <Modal.Title>{modal.name}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <img src={modal.image} className="image" />
