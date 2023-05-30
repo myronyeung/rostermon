@@ -18,7 +18,9 @@ const MonsterDetails: React.FunctionComponent = () => {
           }`}
         />
       ) : (
-        ''
+        <div className="monster-detail-stencil">
+          <p>Please select a card</p>
+        </div>
       )}
     </div>
   );

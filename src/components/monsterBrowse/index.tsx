@@ -60,13 +60,14 @@ const MonsterBrowse: React.FunctionComponent = () => {
         {monsters.allMonsters && (
           <ul className="monster-list" tabIndex={0}>
             {Object.keys(monsters.allMonsters).map((monster) => {
-              const { name, image } = monsters.allMonsters[monster];
+              const { id, name, image } = monsters.allMonsters[monster];
 
               return (
                 <MonsterListItem
                   monsterInfo={monsters.allMonsters[monster]}
                   handleSelectEvent={handleSelectEvent(name, image)}
                   link={'/browse'}
+                  key={`${id}-monster-list-item`}
                 />
               );
             })}

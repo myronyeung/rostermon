@@ -21,7 +21,7 @@ const MonsterListItem: React.FunctionComponent<MonsterListItemProps> = (
     <li
       id={id}
       key={id}
-      className="monster-info"
+      className="monster-list-item"
       onClick={handleSelectEvent}
       tabIndex={0}
     >

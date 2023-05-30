@@ -1,4 +1,5 @@
 @import '../../App.scss';
+@import '../../components/monsterListItem/index.scss';
 
 #monsterBrowse {
   .browse-list-container {
@@ -10,6 +11,8 @@
       list-style-type: none;
       padding-left: 0;
       text-align: left;
+
+      @include monster-list-item-default;
     }
   }
 }
@@ -20,7 +23,7 @@
       width: 900px;
 
       .monster-list {
-        .monster-info {
+        .monster-list-item {
           .id {
             font-size: 0.75rem;
             line-height: 0.75rem;

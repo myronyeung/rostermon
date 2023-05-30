@@ -1,4 +1,5 @@
 @import '../../App.scss';
+@import '../../components/monsterListItem/index.scss';
 
 #monsterFilter {
   #tagFilter {
@@ -22,6 +23,8 @@
           list-style-type: none;
           padding-left: 0;
           text-align: left;
+
+          @include monster-list-item-default;
         }
       }
 
@@ -51,7 +54,7 @@
           .monster-list {
             margin-right: 20px;
 
-            .monster-info {
+            .monster-list-item {
               .id {
                 font-size: 0.75rem;
                 line-height: 0.75rem;
@@ -81,10 +84,19 @@
         padding: 20px 0 0 0;
         width: 300px;
 
-        .monster-large-image {
+        .monster-large-image,
+        .monster-detail-stencil {
           border-radius: 14px; // Counteract non-transparent card image corners ruining box-shadow.
           box-shadow: 7px 7px 15px rgb(0, 0, 0, 0.5);
           width: 300px;
+          height: 412px;
+        }
+
+        .monster-detail-stencil {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.5em;
         }
       }
     }

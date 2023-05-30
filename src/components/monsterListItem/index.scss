@@ -1,67 +1,69 @@
 @import '../../App.scss';
 
-.monster-info {
-  display: grid;
-  grid-template-columns: auto auto 4fr;
-  margin: 20px 10px;
-  @include shadow-border;
-
-  .grid-column {
-    margin: 0;
-  }
-
-  .grid-column.bio,
-  .grid-column.tags {
-    padding: 10px;
-  }
-
-  .grid-column.bio {
+@mixin monster-list-item-default {
+  .monster-list-item {
     display: grid;
-    grid-template-rows: 0.2fr auto 0.5fr;
-  }
+    grid-template-columns: auto auto 4fr;
+    margin: 20px 10px;
+    @include shadow-border;
 
-  .grid-column.tags {
-    text-align: right;
-  }
-
-  div {
-    display: inline-block;
-  }
-
-  .thumbnail {
-    height: 118px;
-  }
-
-  .id {
-    font-size: 0.5rem;
-    line-height: 0.5rem;
-    color: black;
-  }
-
-  .name {
-    font-size: 1.5rem;
-    line-height: 2rem;
-
-    a:link,
-    a:visited {
-      text-decoration: none;
-      color: inherit;
+    .grid-column {
+      margin: 0;
     }
-  }
 
-  .hp-label {
-    font-weight: bold;
-  }
+    .grid-column.bio,
+    .grid-column.tags {
+      padding: 10px;
+    }
 
-  .hp {
-    font-size: 1rem;
-    font-weight: normal;
-    color: black;
-  }
+    .grid-column.bio {
+      display: grid;
+      grid-template-rows: 0.2fr auto 0.5fr;
+    }
 
-  .supertype {
-    display: block;
-    margin-right: 0;
-    font-size: 1.25rem;
+    .grid-column.tags {
+      text-align: right;
+    }
+
+    div {
+      display: inline-block;
+    }
+
+    .thumbnail {
+      height: 160px;
+    }
+
+    .id {
+      font-size: 0.5rem;
+      line-height: 0.5rem;
+      color: black;
+    }
+
+    .name {
+      font-size: 1.5rem;
+      line-height: 2rem;
+
+      a:link,
+      a:visited {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+
+    .hp-label {
+      font-weight: bold;
+    }
+
+    .hp {
+      font-size: 1rem;
+      font-weight: normal;
+      color: black;
+    }
+
+    .supertype {
+      display: block;
+      margin-right: 0;
+      font-size: 1.25rem;
+    }
   }
 }
