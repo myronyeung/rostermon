@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap';
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { monsterState, monsterActions, fetchMonsters } from './monsterSlice';
+import MonsterListItem from '../../components/monsterListItem';
 
 import Logo from '../../../src/images/logo.svg';
 
@@ -67,7 +68,7 @@ const MonsterRoster: React.FunctionComponent = () => {
         {monsters.allMonsters && (
           <ul className="monster-list" tabIndex={0}>
             {Object.keys(monsters.allMonsters).map((monster) => {
-              const { image, name, hp, supertype, types, subtypes } =
+              const { supertype, types, subtypes } =
                 monsters.allMonsters[monster];
               if (
                 shouldDisplayMonster(
@@ -78,53 +79,11 @@ const MonsterRoster: React.FunctionComponent = () => {
                 )
               ) {
                 return (
-                  <li
-                    id={monster}
-                    key={monster}
-                    className="monster-info"
-                    onClick={handleSelectEvent}
-                    tabIndex={0}
-                  >
-                    <div className="grid-column">
-                      <img src={image} alt={name} className="thumbnail" />
-                    </div>
-                    <div className="grid-column bio">
-                      <div className="id">{monster}</div>
-                      <div className="name">
-                        <Link to={'/filter'} onClick={handleSelectEvent}>
-                          {name}
-                        </Link>
-                      </div>
-                      <div>
-                        <div className="supertype">{supertype}</div>
-                        {hp && (
-                          <div className="hp-label">
-                            HP <span className="hp">{hp}</span>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                    <div className="grid-column tags">
-                      {types && types.length > 0
-                        ? types.map((type: string) => {
-                            return (
-                              <span className="tag type" key={type}>
-                                {type}
-                              </span>
-                            );
-                          })
-                        : ''}
-                      {subtypes && subtypes.length > 0
-                        ? subtypes.map((subtype: string) => {
-                            return (
-                              <span className="tag subtype" key={subtype}>
-                                {subtype}
-                              </span>
-                            );
-                          })
-                        : ''}
-                    </div>
-                  </li>
+                  <MonsterListItem
+                    monsterInfo={monsters.allMonsters[monster]}
+                    handleSelectEvent={handleSelectEvent}
+                    link={'/filter'}
+                  />
                 );
               }
             })}

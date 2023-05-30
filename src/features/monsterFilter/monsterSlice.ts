@@ -5,7 +5,10 @@ import { RootState } from '../../app/store';
 
 export type Monster = Record<Id, MonsterInfo>;
 
+export type Id = string;
+
 export type MonsterInfo = {
+  id: string; // For convenience.
   name: string;
   image: string;
   supertype: string;
@@ -13,8 +16,6 @@ export type MonsterInfo = {
   types?: string[];
   subtypes?: string[];
 };
-
-export type Id = string;
 
 export interface MonsterState {
   loading: boolean;

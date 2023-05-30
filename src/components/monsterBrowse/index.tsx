@@ -46,6 +46,10 @@ const MonsterBrowse: React.FunctionComponent = () => {
     }
   };
 
+  const handleSelectEvent = (image: string) => {
+    return () => setModal({ showModal: true, image });
+  };
+
   return (
     <div id="monsterBrowse">
       <div
@@ -60,9 +64,10 @@ const MonsterBrowse: React.FunctionComponent = () => {
 
               return (
                 <li
+                  id={monster}
                   key={monster}
                   className="monster-info"
-                  onClick={() => setModal({ showModal: true, image })}
+                  onClick={handleSelectEvent(image)}
                   tabIndex={0}
                 >
                   <div className="grid-column image">
@@ -71,10 +76,7 @@ const MonsterBrowse: React.FunctionComponent = () => {
                   <div className="grid-column bio">
                     <div className="id">{monster}</div>
                     <div className="name">
-                      <Link
-                        to="/browse"
-                        onClick={() => setModal({ showModal: true, image })}
-                      >
+                      <Link to="/browse" onClick={handleSelectEvent(image)}>
                         {name}
                       </Link>
                     </div>
